@@ -1,0 +1,137 @@
+{
+    "info": {
+        "name": "OTP Backend API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health Check",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/health/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "health",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "List OTP Messages",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/otp-messages/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "otp-messages",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create OTP Message (Alphanumeric)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"otp\": \"483921\",\n    \"sender\": \"bKash\",\n    \"receiver_number\": \"+88017XXXXXXXX\",\n    \"message_body\": \"Your OTP is 483921\",\n    \"received_at\": \"2026-07-30T12:00:00Z\",\n    \"metadata\": {\n        \"sender_type\": \"ALPHANUMERIC\",\n        \"carrier\": \"Grameenphone\",\n        \"sim_slot\": 0\n    },\n    \"raw_payload\": {\n        \"android_version\": 16,\n        \"device_model\": \"Pixel 8\"\n    }\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/otp-messages/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "otp-messages",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Create OTP Message (Phone Number)",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"otp\": \"123456\",\n    \"sender\": \"+8801712345678\",\n    \"receiver_number\": \"+88017XXXXXXXX\",\n    \"message_body\": \"Your verification code is 123456\",\n    \"received_at\": \"2026-07-30T12:05:00Z\",\n    \"metadata\": {},\n    \"raw_payload\": {}\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/otp-messages/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "otp-messages",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Get OTP Message by UUID",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8000/api/v1/otp-messages/<ENTER_UUID_HERE>/",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8000",
+                    "path": [
+                        "api",
+                        "v1",
+                        "otp-messages",
+                        "<ENTER_UUID_HERE>",
+                        ""
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
